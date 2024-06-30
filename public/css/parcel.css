@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body{
+  font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.Manage-title-text{
+    font-size: 50px;
+    font-family: "Oswald", sans-serif;
+    margin-bottom: 1rem;
+    margin-top: 25px;
+    color: rgb(135, 131, 131);
+    text-align: center;
+    text-decoration: underline 6px rgb(255, 128, 0);
+    text-shadow: 10px 10px 10px rgba(0,0,0,.5), 20px 20px 20px rgba(0,0,0,.4), 
+}
+.bodyUse_box {
+    width: 25rem;
+    height: 32.813rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 20px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bodyUse_box:hover {
+    box-shadow: rgba(232, 72, 3, 0.35) 0px 6px 18px;
+}
+
+
+.iteminform {
+    height: 70px;
+    width: 100%;
+    margin-bottom: 0.1rem;
+    padding: 0rem 0.5rem;
+}
+.iteminform-submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 340px;
+    margin-top: 0.1rem;
+    gap: 5px;
+}
+
+.input-control {
+    width: 100%;
+    height: 2.8rem;
+    border: 0.1px solid black;
+    border-radius: 20px;
+    padding: 0 1rem;
+    margin: 0.5rem 0;
+    color: rgb(135, 131, 131);
+}
+.iteminform_checkbox{
+    height: auto;
+    width: 340px;
+    display: flex;
+    flex-direction: row;
+    padding: 0.2rem;
+}
+.input_control_checkbox{
+    width: 2rem;
+    height: 2rem;
+}
+.input-control:hover {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.checkbox_input_zone{
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+.checkbox_input_alert{
+    width: 85%;
+    display: flex;
+    font-weight: 1000;
+    align-items: center;
+    padding-top: 1.1rem;
+    font-size: 20px;
+    padding-left: 0.2rem;
+}
+
+.button_submit {
+    background: linear-gradient(to bottom right, #FF7F3E, #FFBF78);
+    border: 0;
+    border-radius: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    width: 40%;
+    
+
+  }
+  
+  .button_submit:not([disabled]):focus {
+      box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #FF7F3E, .125rem .125rem 1rem #FFBF78;
+    }
+    
+  .button_submit:not([disabled]):hover {
+      box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #FF7F3E, .125rem .125rem 1rem #FFBF78;
+  }
+
+
+  .button_Back {
+    background: linear-gradient(to bottom right, #4B70F5, #3DC2EC);
+    border: 0;
+    border-radius: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    width: 40%;
+    
+
+  }
+  
+  .button_Back:not([disabled]):focus {
+      box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #4B70F5, .125rem .125rem 1rem #3DC2EC;
+    }
+    
+  .button_Back:not([disabled]):hover {
+      box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #4B70F5, .125rem .125rem 1rem #3DC2EC;
+  }
+

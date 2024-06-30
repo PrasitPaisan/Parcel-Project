@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body{
+  font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.data1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    
+}
+.form_search{
+    width: 100%;
+    height:4rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-align: center;
+    /* border-radius: 15px; */
+    background: transparent;
+    backdrop-filter: blur(30px);
+    /* transition: 0.1s; */
+    padding: 10px;
+    margin-bottom: 10px;
+ 
+}
+
+
+/* .container1{
+    display: flex;
+    justify-content: center;
+} */
+
+
+.button_search {
+    background: linear-gradient(to bottom right, #FF7F3E, #FFBF78);
+    border: 0;
+    border-radius: 8px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    width: 20%;
+    
+
+  }
+  
+  .button_search:not([disabled]):focus {
+      box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #FF7F3E, .125rem .125rem 1rem #FFBF78;
+    }
+    
+  .button_search:not([disabled]):hover {
+      box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #FF7F3E, .125rem .125rem 1rem #FFBF78;
+  }
+
+
+
+  /* table zone  */
+.table_Of_data{
+   
+    border-radius: 20px;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.text-item-head {
+    border-radius: 15px;
+    box-shadow: #FF7F3E 2px 7px 12px, #FFBF78 4px 6px 6px;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    width: 95%;
+    margin-bottom: 10px;
+    background: linear-gradient(to bottom right, #FF7F3E, #FFBF78);
+}
+
+
+
+
+.text-item{
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 5px 0;
+    padding: 1.5rem;
+    width: 95%;
+    transition: 0.6s;
+    
+
+}
+.text-item:hover{
+    border-radius: 15px;
+    box-shadow: rgba(111, 110, 110, 0.19) 0px 10px 20px, rgba(99, 99, 99, 0.23) 0px 6px 6px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 5px 0;
+    padding: 1.5rem;
+    width: 95%;
+    background-color: #f1f1f1;
+    transform: scale(1.01);
+    
+}
+.form-search{
+    display: flex;
+    justify-content:space-around;
+    
+}
+.item_in_formsearch{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 25%;
+    
+    
+}
+#submit_button{
+    align-self: flex-start;
+}
+
+.img_alert{
+    width: 80%;
+    height: 80%;
+}
+
+.alert_notfound{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item_table{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+.item_table_name{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+.item_table_status_noreceive{
+    width: 2rem;
+    height:2rem;
+    box-shadow: rgb(4, 178, 4) 1px 2px 3px, #3fff00 1px 2px 3px;
+    background: linear-gradient(to bottom right, rgb(4, 178, 4), #3fff00);
+    border-radius: 50%;
+}
+.item_table_status_receive{
+    width: 2rem;
+    height:2rem;
+    box-shadow: #ff4e50 1px 2px 3px, #f9d423 1px 2px 3px;
+    background: linear-gradient(to bottom right, #ff4e50, #f9d423);
+    border-radius: 50%;
+}
+
+/*  */

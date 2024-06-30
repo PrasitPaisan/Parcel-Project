@@ -1,0 +1,8 @@
+box-icon{
+    margin-right:4px ;
+}
+.navbar{
+    background: transparent;
+    backdrop-filter: blur(20px);
+
+}

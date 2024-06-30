@@ -1,0 +1,62 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Playwrite+AU+TAS:wght@100..400&display=swap');
+box-icon{
+    margin-right:4px ;
+}
+.navbar {
+    position: relative;
+    background: transparent;
+    backdrop-filter: blur(30px);
+    background-color: whitesmoke;
+}
+
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to bottom right, #ff4e50, #f9d423);
+}
+
+footer{
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 4rem;
+    background-color: #f8f9fa;
+    text-align: center;
+    margin-top: 12rem;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.logoFonts{
+    font-family: "Anton", sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    color: rgb(116, 113, 113);
+    position: relative; /* Added to enable positional changes */
+    transition: font-size 1s, transform 1s; /* Transition only font-size and transform */
+}
+
+.logoFonts:hover{
+    font-size: 60px;
+    transform: rotate(1080deg);
+    text-shadow:
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    animation-name: moveText;
+    animation-duration: 3s;
+    animation-delay: 0s;
+}
+
+@keyframes moveText {
+    0%   {background-color: none; left: 0px; top: 0px;}
+    100% {background-color: none; left: 15px; top: 0px;}
+}

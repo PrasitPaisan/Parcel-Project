@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/insert.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <title>Insert</title>
+</head>
+<body>
+    <%- include('navbar')%>
+    <div class="container_insert">
+        <div class="form_insert">
+            <h2 class="text_title">INPUT USER</h2>
+            <form method="post" action="/saveUser/DB">
+                <div class="mb-3">
+                    <% if (date) { %>
+                        <input type="date" class="input-control" name="date" value="<%= date %>" required>
+                    <% } else { %>
+                        <input type="date" class="input-control" name="date" id="dateInput" required>
+                    <% } %>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="input-control" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="mb-3">
+                    <select type="text" class="input-control" id="company" name="company" required>
+                        <% if (company) { %>
+                            <option value="-" <%= company === '-' ? 'selected' : '' %>>Company</option>
+                            <option value="Flash" <%= company === 'Flash' ? 'selected' : '' %>>Flash</option>
+                            <option value="J&T" <%= company === 'J&T' ? 'selected' : '' %>>J&T</option>
+                            <option value="Kerry" <%= company === 'Kerry' ? 'selected' : '' %>>Kerry</option>
+                            <option value="DHL" <%= company === 'DHL' ? 'selected' : '' %>>DHL</option>
+                        <% } else { %>
+                            <option value="-">Company</option>
+                            <option value="Flash">Flash</option>
+                            <option value="J&T">J&T</option>
+                            <option value="Kerry">Kerry</option>
+                            <option value="DHL">DHL</option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="btn_control">
+                    <button type="submit" class="button_search" id="submit_button">Submit</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    
+  
+  
+    
+</body>
+
+<script>
+    // Set the date input to today's date by default
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const dateInput = document.getElementById('dateInput');
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+        const day = String(today.getDate()).padStart(2, '0');
+        const currentDate = `${year}-${month}-${day}`;
+        dateInput.value = currentDate;
+    });
+</script>
+</html>

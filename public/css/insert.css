@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+body{
+    background-image:url('https://img.freepik.com/free-vector/white-minimal-hexagons-background_79603-1452.jpg?w=2000&t=st=1719025430~exp=1719026030~hmac=14cab162fddf9e2b87c7f8f832bdae99041b621db93a94084874ffe4c8e6371a') ;
+    background-size: cover; /* This makes the image cover the entire body */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+    background-attachment: fixed; /* This makes the background image fixed in place */
+    background-position: center center; /* This centers the background image */
+}
+.form_insert{
+    width: 25rem;
+    height: 32.813rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 20px;
+    box-align: center;
+    border-radius: 20px;
+    background: transparent;
+    backdrop-filter: blur(30px);
+    transition: 0.1s;
+    padding: 20px 35px 20px 35px;
+    margin: 20px 0;
+    background-color: white;
+}
+.form_insert:hover{
+    width: 25rem;
+    height: 32.813rem;
+    box-shadow: rgba(232, 72, 3, 0.35) 0px 6px 18px;
+    box-align: center;
+    border-radius: 15px;
+    transform: scale(1.01);
+}
+
+.container_insert{
+    display: flex;
+    justify-content: center;
+}
+.text_title{
+    font-size: 50px;
+    font-family: "Oswald", sans-serif;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    color: rgb(135, 131, 131);
+    text-align: center;
+    text-decoration: underline 6px rgb(255, 128, 0);
+    text-shadow: 10px 10px 10px rgba(0,0,0,.5), 20px 20px 20px rgba(0,0,0,.4), 
+
+
+}
+
+.btn_control{
+    display: flex;
+    justify-content: flex-end;    
+}
+.button_search {
+    background: linear-gradient(to bottom right, #FF7F3E, #FFEEA9);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0.2rem 1.3rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+  }
+  
+  .button_search:not([disabled]):focus {
+      box-shadow: 0 0 .25rem rgba(171, 170, 170, 0.5), -.125rem -.125rem 1rem #FF7F3E, .125rem .125rem 1rem #FFEEA9;
+    }
+    
+  .button_search:not([disabled]):hover {
+      box-shadow: 0 0 .25rem rgba(162, 162, 162, 0.5), -.125rem -.125rem 1rem #FF7F3E, .125rem .125rem 1rem #FFEEA9;
+  }
+
+  .input-control{
+    width: 100%;
+    height: 2.8rem;
+    border: 0.1px solid black;
+    border-radius: 20px;
+    padding:0 1rem 0 1rem;
+    margin: 0.5rem 0rem 0.5rem 0rem;
+    color: rgb(135, 131, 131) ;
+
+  }
+  .input-control:hover{
+    border: 1px solid black;
+    cursor: pointer;
+  }
