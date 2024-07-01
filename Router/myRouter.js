@@ -2,69 +2,13 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const bodyParser = require('body-parser');
-const {Userdb,userSchema,getCurrentMonth} = require('../model/User'); // Adjust the path as necessary
+const {Userdb,userSchema,getCurrentMonth,removeDay,countDocumentInMonth,countDocumentInDay,contDocumentInYear} = require('../model/User'); // Adjust the path as necessary
 const { default: mongoose } = require('mongoose');
 const { render } = require('ejs');
 
 // Use body-parser middleware to parse form data
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
-
-
-//function for fixed name fo database
-function removeDay(date) {
-    if (!date) {
-        return null; // Or handle this case as needed
-    }
-    const dateall = date.split('-');
-    return `${dateall[0]}-${dateall[1]}`;
-}
-
-
-// this function using for count document all of the month
-async function countDocumentInMonth(yearAndMonth){
-    let received = 0;
-    let noreceived = 0;
-    const db = mongoose.connection.useDb(yearAndMonth);
-    const nativeDb = db.db;
-    const collections = await nativeDb.listCollections().toArray();
-    const collectionNames = collections.map(collection => collection.name);
-  
-    for(let items of collectionNames){
-        const tableName = db.model(items, userSchema, items);
-        const documents = await tableName.find().exec();
-        for(doc of documents){
-            if(doc.status === true){
-                noreceived +=1;
-            }else if(doc.status === false){
-                received +=1;
-            }else{
-                console.log(`this data can't count !! name : ${doc.name}`)
-            }
-        }
-        
-    }
-    return {received:received,noreceived:noreceived,total: received + noreceived};
-}
-
-async function countDocumentInDay(documents){
-    let received = 0;
-    let noreceived = 0;
-    for(document of documents){
-        if(document.status === true){
-            noreceived +=1;
-        }else if(document.status === false){
-            received +=1;
-        }else{
-            console.log(`this data can't count !! name : ${doc.name}`)
-        }
-    }
-    return {received:received,noreceived:noreceived,total: received + noreceived};
-
-}
-
-
-
 
 
 

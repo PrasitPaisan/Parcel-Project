@@ -164,6 +164,7 @@ body{
     box-shadow: rgb(4, 178, 4) 1px 2px 3px, #3fff00 1px 2px 3px;
     background: linear-gradient(to bottom right, rgb(4, 178, 4), #3fff00);
     border-radius: 50%;
+    animation: notreceive 2s infinite;
 }
 .item_table_status_receive{
     width: 2rem;
@@ -171,6 +172,32 @@ body{
     box-shadow: #ff4e50 1px 2px 3px, #f9d423 1px 2px 3px;
     background: linear-gradient(to bottom right, #ff4e50, #f9d423);
     border-radius: 50%;
+    /* animation: received 2s infinite; */
 }
+
+@keyframes notreceive {
+    0%{
+        box-shadow: rgb(4, 215, 4) 2px 3px 8px, #3fff00 2px 3px 8px;
+    }
+    50%{
+        box-shadow: rgb(4, 178, 4) 2px 2px 3px, #3fff00 2px 2px 3px;
+    }
+    100%{
+        box-shadow: rgb(4, 215, 4) 2px 3px 8px, #3fff00 2px 3px 8px;
+    }
+}
+/* @keyframes received{
+    0%{
+        box-shadow: #f33639 2px 4px 8px, #f9d423 2px 4px 8px;
+    }
+    50%{
+        box-shadow: #ff4e50 2px 2px 3px, #f9d423 2px 2px 3px;
+    }
+    100%{
+        box-shadow: #f33639 2px 4px 8px, #f9d423 2px 4px 8px;
+    }
+    
+} */
+
 
 /*  */
