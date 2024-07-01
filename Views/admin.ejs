@@ -15,6 +15,7 @@
         <div class="head-left">
             <div class="Dashboard">Dashboard</div>
             <div class="box_date"><div>At : <%=timeCurrent%></div></div>
+            <div class="box_date"><div>year : <%=countsYear.received%> : <%=countsYear.noreceived%> : <%=countsYear.total%>  </div></div>
         </div>
         <a href="/admin/logout" class="button-logout" onclick="return confirm('Are you sure')">Logout</a>
     </div>
@@ -55,10 +56,10 @@
             <div class="text-header-box-zone2_1">
                 <!-- find year  --> 
                 <form action="/admin" method="post" class="form-inputyearandmont">
-                    <% if(timeCurrent){%>
-                        <input type="month" name="DBname" class="inputYearAndMonth" value="<%= timeCurrent %>">
+                    <% if(DatabaseNameCurrent){%>
+                        <input type="month" name="DBname" class="inputYearAndMonth" value="<%= DatabaseNameCurrent %>" required>
                     <% }else{%>
-                        <input type="month" name="DBname" class="inputYearAndMonth" >
+                        <input type="month" name="DBname" class="inputYearAndMonth" required>
                     <%}%>
                     <button type="submit" class="btn-submityearandmont">Search</button>
                 </form>

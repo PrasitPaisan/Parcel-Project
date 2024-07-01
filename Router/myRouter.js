@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const bodyParser = require('body-parser');
-const {Userdb,userSchema,getCurrentMonth,removeDay,countDocumentInMonth,countDocumentInDay,contDocumentInYear} = require('../model/User'); // Adjust the path as necessary
+const {Userdb,userSchema,getCurrentMonth,removeDay,countDocumentInMonth,countDocumentInDay,countDocumentInYear} = require('../model/User'); // Adjust the path as necessary
 const { default: mongoose } = require('mongoose');
 const { render } = require('ejs');
 
@@ -24,24 +24,27 @@ router.get('/login',(req,res)=>{
 router.post('/admin', async (req, res) => {
     if (req.session.login) {
         try {
-            console.log('can access post');
+            console.log(`------ access post ------`)
             const yearAndMonth = req.body.DBname;
             console.log(`year and month is ${yearAndMonth}`);
 
+            //get data for count document/year
+            const documentCountYear = await countDocumentInYear(yearAndMonth)
+            console.log("data in year is =>")
+            console.log(documentCountYear);
+            //get data for count document/month
+            const documentCountMonth = await countDocumentInMonth(yearAndMonth);
+            console.log("data in month is =>")
+            console.log(documentCountMonth);
+
+            //find data in database name 
             const db = mongoose.connection.useDb(yearAndMonth);
             const nativeDb = db.db;
             const collections = await nativeDb.listCollections().toArray();
             const collectionNames = collections.map(collection => collection.name);
             console.log(collectionNames)
         
-            const documentCount = await countDocumentInMonth(yearAndMonth);
-            console.log(documentCount);
-            // for check yearandmonth if dont have data will change to use Current time 
-            if(yearAndMonth){
-                res.render('admin', { dataCollection: collectionNames, document: [] ,counts:documentCount ,timeCurrent:yearAndMonth});
-            }else{
-                res.render('admin', { dataCollection: collectionNames, document: [] ,counts:documentCount ,timeCurrent:getCurrentMonth()});
-            }
+            res.render('admin', { dataCollection: collectionNames, document: [] ,counts:documentCountMonth,countsYear:documentCountYear ,timeCurrent:yearAndMonth,DatabaseNameCurrent:yearAndMonth});
         } catch (err) {
             console.error("Error fetching collections:", err);
             res.status(500).send("Internal Server Error try 1 in post");
@@ -54,28 +57,22 @@ router.post('/admin', async (req, res) => {
 router.get('/admin', async (req, res) => {
     if (req.session.login) {
         try {
-            console.log('can access get');
+            console.log(`------ access post ------`)
             const days = req.query.name;
 
             if (days) {
-                // Derive database name from days
-                function removeDay(date) {
-                    const dateall = date.split('-');
-                    return `${dateall[0]}-${dateall[1]}`;
-                }
                 let yearAndMonth = removeDay(days);
                 console.log("Databasename : "+yearAndMonth + " and collectionanme : "+ days);
 
-                // Use the derived database name
-                // Uncomment the next line and comment out the fake database name for real usage
-                // const db = mongoose.connection.useDb(yearAndMonth);
-                // FAKE FOR TEST
                 const db = mongoose.connection.useDb(yearAndMonth);
 
                 const nativeDb = db.client.db(yearAndMonth);
                 const collections = await nativeDb.listCollections().toArray();
                 const collectionNames = collections.map(collection => collection.name);
                 console.log(collectionNames);
+                
+                //count data in year 
+                const documentCountYear = await countDocumentInYear(yearAndMonth)
             
 
                 try {
@@ -87,13 +84,14 @@ router.get('/admin', async (req, res) => {
                     const documentCount = await countDocumentInDay(documents);
                     console.log(`count in ${days}`);
 
-                    res.render('admin', { dataCollection: collectionNames, document: documents,counts:documentCount ,timeCurrent:days});
+
+                    res.render('admin', { dataCollection: collectionNames, document: documents,counts:documentCount,countsYear:documentCountYear ,timeCurrent:days,DatabaseNameCurrent:yearAndMonth});
                 } catch (err) {
                     console.error(`Error fetching documents from ${req.query.name}:`, err);
                     res.status(500).send("Internal Server Error try 2 GET");
                 }
             } else {
-                res.render('admin', { dataCollection: [], document: [] ,counts:[],timeCurrent:[]});
+                res.render('admin', { dataCollection: [], document: [] ,counts:[],countsYear:[],timeCurrent:[],DatabaseNameCurrent:[]});
             }
         } catch (err) {
             console.error("Error fetching collections:", err);

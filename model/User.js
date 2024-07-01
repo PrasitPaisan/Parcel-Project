@@ -75,8 +75,8 @@ async function countDocumentInMonth(yearAndMonth) {
 }
 
 
-
-async function contDocumentInYear(dateOrMonth) {
+//cant use 
+async function countDocumentInYear(dateOrMonth) {
     const year = getYear(dateOrMonth); // Assuming getYear is a function that extracts the year from dateOrMonth
     const months = Array.from({ length: 12 }, (_, i) => (i + 1).toString().padStart(2, '0'));
 
@@ -127,5 +127,5 @@ module.exports.saveUser = async function(model,document){
 }
 
 //export
-module.exports = {Userdb,userSchema,getCurrentMonth,countDocumentInDay,countDocumentInMonth,contDocumentInYear,removeDay};
+module.exports = {Userdb,userSchema,getCurrentMonth,countDocumentInDay,countDocumentInMonth,countDocumentInYear,removeDay};
 

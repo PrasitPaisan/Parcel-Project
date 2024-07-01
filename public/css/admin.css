@@ -21,7 +21,7 @@ body{
 
 }
 .head-left{
-    width: 70%;
+    width: 90%;
     min-width: 250px;
     height: 100%;
     display: flex;
@@ -29,6 +29,7 @@ body{
     justify-content: flex-start;
     align-items: center;
 }
+
 .Dashboard{
     font-size: 3rem;
     text-align: center;
@@ -188,7 +189,7 @@ body{
         font-size: 1.7rem;
     }
     .box_date{
-        font-size: 1rem;
+        font-size: 0.7rem;
     }
     .defult_text-zone1{
         font-size: 1rem;
@@ -212,7 +213,7 @@ body{
         font-size: 1.5rem;
     }
     .box_date{
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
     .btn-submityearandmont{
         font-size: 0.5rem;
