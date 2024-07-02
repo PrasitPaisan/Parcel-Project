@@ -14,11 +14,16 @@
     <div class="head">
         <div class="head-left">
             <div class="Dashboard">Dashboard</div>
-            <div class="box_date"><div>At : <%=timeCurrent%></div></div>
-            <div class="box_date"><div>year : <%=countsYear.received%> : <%=countsYear.noreceived%> : <%=countsYear.total%>  </div></div>
         </div>
         <a href="/admin/logout" class="button-logout" onclick="return confirm('Are you sure')">Logout</a>
     </div>
+    <div class="head_2">
+        <div class="head-left_2">
+            <div class="box_date"><div>At : <%=timeCurrent%></div></div>
+            <div class="box_date_year">Year : <div style="color: #EE4E4E; font-weight: 700;"><%=countsYear.received%></div> : <div style="color: #50cc7f; font-weight: 700;"><%=countsYear.noreceived%></div> : <div style="color: black; font-weight: 700;"><%=countsYear.total%></div></div>
+        </div>
+    </div>
+
     <div class="zone1">
         <div class="box-zone1">
             <p class="defult_text-zone1">Received</p>
