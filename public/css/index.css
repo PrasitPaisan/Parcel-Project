@@ -6,12 +6,17 @@ body {
     font-weight: 400;
     font-style: normal;
     background-image: url('https://img.freepik.com/free-vector/white-minimal-hexagons-background_79603-1452.jpg?w=2000&t=st=1719025430~exp=1719026030~hmac=14cab162fddf9e2b87c7f8f832bdae99041b621db93a94084874ffe4c8e6371a');
-    background-size: cover; /* This makes the image cover the entire body */
-    background-repeat: no-repeat; /* This prevents the image from repeating */
-    background-attachment: fixed; /* This makes the background image fixed in place */
-    background-position: center center; /* This centers the background image */
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center center;
 }
-
+/* .back_video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index:-1 ;
+} */
 .text-welcome {
     width: 100%;
     display: flex;

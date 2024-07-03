@@ -7,6 +7,7 @@ body{
     background-attachment: fixed; /* This makes the background image fixed in place */
     background-position: center center; /* This centers the background image */
 }
+
 .form_insert{
     width: 25rem;
     height: 32.813rem;
