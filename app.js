@@ -19,6 +19,7 @@ app.use(session({secret:'mysession',resave:false,saveUninitialized:'public'}));
 //connect public folder
 app.use(express.static(path.join(__dirname,'public')))
 app.use(express.static(path.join(__dirname,'logo')))
+
 // Use the router
 app.use(router);
 
